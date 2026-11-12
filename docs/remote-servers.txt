@@ -1,0 +1,75 @@
+REMOTE COMMUNITY LAUNCHER — Windows / Linux Proton
+
+Community connections
+  Server bookmarks, accounts and friendships are scoped to the selected private
+  server. Available party and gameplay features depend on that server's version.
+
+Player installation (Linux x86_64)
+  Extract the complete DivisionPrivateLauncher-0.4.16-linux-x64.tar.gz into a
+  writable folder and run ./launch.sh. No development checkout or .NET SDK is
+  required: the bundle includes the .NET runtime, desktop app and our adapter.
+  The game and Proton are not included. Use your own official game installation
+  and the tested Proton9.0-4 runtime. In Installation, browse to their folders;
+  the included adapter dependencies folder is selected automatically.
+  Choose Check and save installation. Python3, iproute2 (ip), util-linux
+  (unshare), OpenSSL, supported graphics drivers and normal desktop libraries
+  must be installed. Unprivileged user/network namespaces must be available.
+  The included Frida17.4.0 libraries retain their bundled license notices.
+  The native adapter requires the exact executable fingerprint documented in
+  LauncherCompatibility.cs. Unknown builds fail before any hooks are applied.
+
+  Add server: enter https://your-server.example.com:25443 (or443 if configured).
+  Use the operator's real address, not the example. Publicly trusted HTTPS needs
+  no fingerprint. For privately signed HTTPS, obtain the SHA256 fingerprint
+  directly from the operator and enter it under the certificate section.
+  Verify and save, then Check connection. Create an account or sign in.
+  Your credentials belong to that community only, not Steam/Ubisoft.
+  Select Play. The launcher checks dependencies, build compatibility and all
+  four advertised game TCP endpoints before requesting/using a launch ticket.
+  These checks establish TCP connectivity, not complete gameplay correctness.
+  Expired/revoked sessions return to sign-in. No password or game ticket is saved.
+
+  Accounts remain on the server. Local profiles/addon settings/client tutorial
+  history remain under profiles in your extracted bundle.
+  Keep that directory when upgrading. Do not give another person your configured
+  bundle; distribute the clean release archive. Captures/runtime may contain
+  private gameplay diagnostics and must not be included in a release.
+
+  Command-line connection diagnosis, without an account or game launch:
+    ./launch.sh --check-server=https://your-server.example.com:25443
+    ./launch.sh --check-server=https://your-server.example.com:25443 --certificate=SHA256
+  Exit0 means identity/protocol/compatibility and four TCP probes passed.
+  Exit1 includes the failing role/endpoint. No game grant is requested.
+
+Platform boundaries
+  Linux game launching uses Proton. Windows starts the selected installed
+  game natively with bundled Python/Frida/Pillow; no Proton or separate Python
+  installation is needed on Windows. The Windows bundle includes its own README. Windows native
+  gameplay remains pending acceptance testing; macOS game launching is unsupported.
+  Windows and Linux launchers use the same private server connection protocol.
+  External internet gameplay and other Linux distributions need acceptance tests.
+
+Server operator
+  Use the native ServerAdmin supervisor for headless Linux, Linux desktop or
+  Windows. See docs/server-deployment.txt and tools/server.py in the DivisionServer
+  repository. Publish hosts with tools/build.py publish-server --runtime RID.
+  Configure a fresh private instance and the current bundled content catalogs.
+  Remote players need the reachable advertised host, API HTTPS certificate and
+  access to all four game TCP endpoints. Admin IPC is local and private.
+  Keep the complete instance and realm identity across upgrades and restarts.
+
+Release/build (from the source repository root)
+  python tools/dependencies.py linux
+  python tools/build.py publish-launcher --runtime linux-x64
+  python tools/build.py bundle-launcher --runtime linux-x64
+  Use dependencies.py windows and --runtime win-x64 for Windows.
+  Builds are self-contained and retain third-party notices. The builder uses an
+  explicit code/assets list; private profiles and raw game files are excluded.
+  Manifests/checksums verify integrity, not publisher identity. Automatic network
+  updates are not enabled. Import updates only from a trusted distributor.
+
+Known limits
+  This is a community deployment preparation, not a guarantee of multiplayer,
+  every quest, or complete retail-client parity. Remote gameplay still requires
+  a test from a second machine. No game content, retail account data, private
+  certificate, password, launcher session or captured save is distributed.

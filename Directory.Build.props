@@ -1,0 +1,11 @@
+<Project><PropertyGroup>
+<TargetFramework>net10.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+<TreatWarningsAsErrors>true</TreatWarningsAsErrors><RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+<Deterministic>true</Deterministic><AnalysisLevel>latest</AnalysisLevel>
+<!-- Keep compiler/PDB/caller-file paths independent of the builder's home directory. -->
+<PathMap>$(MSBuildThisFileDirectory)=/_/launcher/</PathMap>
+<!-- Keep real Git checkout paths and untracked sources out of release symbols. -->
+<EnableSourceLink>false</EnableSourceLink>
+<EmbedUntrackedSources>false</EmbedUntrackedSources>
+<NuGetLockFilePath Condition="'$(RepositoryRuntime)' != ''">$(MSBuildProjectDirectory)/packages.$(RepositoryRuntime).lock.json</NuGetLockFilePath>
+</PropertyGroup></Project>

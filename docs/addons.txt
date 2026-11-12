@@ -1,0 +1,71 @@
+In-game launcher addons — October29, launcher0.3.4
+
+Built-in panels
+  Addons has two independent per-server toggles: Player position and Packets.
+  Position shows sampled C2S15 position/direction with age/stale status. Packet
+  list accepts ALL, a decimal/0x ID, or comma/semicolon-separated IDs; select a
+  row for hex/ASCII. ID bytes are orange and contents blue, with start/end offsets.
+  These are plaintext inner messages, not TLS/frame headers. Role labels do not
+  imply complete payload/variant decoding. Unknown fields remain unknown.
+
+Controls
+  Each panel has optional title controls: Bar on/off pins or hides its title bar,
+  - minimizes to the title bar, + restores, and X closes. Position defaults to a
+  single line with its bar hidden. F8 reveals temporary controls even for hidden
+  bars; a closed panel shows a small Show handle in editing mode. Press F8 again
+  to hide those handles. Minimized/closed/bar preferences survive relaunch, and
+  closing panels does not stop packet recording. Launcher toggles disable addons.
+  F8 toggles editing and consumes game input. Shift+drag moves panels; drag the
+  lower-right corner to resize. Ctrl+wheel changes font; Alt+wheel changes alpha.
+  When the native cursor is visible, it supplies hit-test coordinates, scaled
+  from the game window into render pixels. Hidden gameplay uses the orange
+  fallback cursor. Desktop cursor clipping and visibility are not changed.
+  Wheel scroll on List freezes the viewed rows while capture continues. Follow
+  latest resumes incoming rows and returns from Hex to List. Pause/Resume remains
+  available. Hex selection is pinned even when its row leaves the bounded list.
+  Direction cycles BOTH/C2S/S2C. Enter applies the ID filter. Layout, size, font,
+  opacity and filter persist locally in profiles/overlay-layout.json.
+
+Cleanup
+  The companion browser viewer, its loopback HTTP listener, packet_viewer toggle,
+  and the bundled mission_watch/packet_patterns examples are removed. Existing
+  observations and panel preferences are preserved. Old addon preference rows
+  cannot start a removed addon. Release archives remain available for rollback;
+  they are not loaded by the selected launcher release.
+  Browser-only markers/export controls have not been ported into these panels.
+  Custom Lua discovery remains available; no sample Lua addons ship by default.
+
+Recording and authority
+  Server --developer-diagnostics must be enabled. Account tokens stay in the
+  launcher; server observation requests are scoped to the authenticated account.
+  C2S is observed after transport decoding before handler validation; S2C queued
+  does not prove client receipt/application. Fixed client-hook lifecycle events
+  are recorded separately. Credential-sensitive messages remain redacted. No
+  packet mutation, send, gameplay command or arbitrary game-memory API is exposed.
+  Captures are saved under captures/<run>/observations.sqlite3. The Observation
+  table retains binary evidence and metadata; this is not account/game state.
+  Capture recording is independent of on-screen retention and has a128MiB budget.
+  On-screen list is bounded512 rows/8MiB. Skipped snapshot rows and server eviction
+  are reported. The host polls600ms for overlays, below120 requests/minute; input
+  is sampled separately. History from before subscription is not recoverable.
+
+Lua extension boundary
+  Place trusted *.lua scripts in addons and rescan the Addons
+  page. Metadata reads -- Name: and -- Description: without executing scripts.
+  Return {OnEvent=function(Event) ... end}; returning a string writes a journal
+  annotation. Fields include Kind, Source, Direction, Service, MessageId,
+  PayloadBytes, IdBytes, Hex, Status, Detail, Sequence, Connection, Redacted and
+  Truncated. Lua executes outside the game with a100000-instruction invocation
+  budget. It is not a hardened memory sandbox. Exceptions disable that addon.
+  Script changes take effect at next launch; server content Lua stays separate.
+
+Rendering and validation
+  Linux requires Pillow10.1+ and Proton. Windows0.4.0 includes its native
+  adapter and Pillow. Both share the D3D11 overlay, which restores pipeline state
+  and releases each backbuffer reference. DX12/HDR/MSAA remain unsupported.
+  Native Windows game/overlay acceptance needs a Windows playtest.
+  User verified rendered panels, resizing the game, panel dragging and click
+  isolation. Dual-cursor alignment and occasional wheel leakage were reported;
+ 0.3.3 includes the0.3.2 cursor correction and adds lock-contention input masking
+  plus Follow latest. Focused native/UI checks pass; live retest is pending.
+  Detailed evidence: Research/AddonOverlay/findings.txt.

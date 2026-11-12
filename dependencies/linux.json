@@ -1,0 +1,8 @@
+{
+  "fridaServer": {
+    "url": "https://github.com/frida/frida/releases/download/17.4.0/frida-server-17.4.0-windows-x86_64.exe.xz",
+    "sha256": "05a8cb5688660fd7f43edd5e19c3db83bf1eaf60892d7935d2bf466b9faba3e2"
+  },
+  "pythonPackages": ["frida==17.4.0", "typing_extensions==4.12.2"],
+  "note": "Python wheels are version-pinned and installed from PyPI by pip. Unlike fridaServer, wheel hashes are not pinned in this manifest. Linux host requires Python3, Proton and user/network namespaces."
+}

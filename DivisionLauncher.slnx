@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Core/Core.csproj" />
+    <Project Path="src/Launcher/Launcher.csproj" />
+    <Project Path="src/LauncherDesktop/LauncherDesktop.csproj" />
+    <Project Path="src/LauncherDesktop.Tests/LauncherDesktop.Tests.csproj" />
+  </Folder>
+</Solution>

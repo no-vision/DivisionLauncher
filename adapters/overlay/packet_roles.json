@@ -1,0 +1,496 @@
+{
+  "game_server/C2S/10": {
+    "role": "EntityInitializationRequest",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/106": {
+    "role": "WeaponShot",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/118": {
+    "role": "InteractionProgress",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/12": {
+    "role": "AppearanceConfirmation",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/121": {
+    "role": "LiaisonInteraction",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/122": {
+    "role": "CitizenAid",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/130": {
+    "role": "LootSelection",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/134": {
+    "role": "StashTransfer",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/136": {
+    "role": "EquipmentSwitch",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/15": {
+    "role": "PlayerPosition",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/150": {
+    "role": "VendorStock",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/151": {
+    "role": "VendorClose",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/152": {
+    "role": "VendorPurchase",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/153": {
+    "role": "VendorSale",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/156": {
+    "role": "VendorBuybackList",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/158": {
+    "role": "VendorBuyback",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/159": {
+    "role": "ZonePreparation",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/17": {
+    "role": "PartialStateInterest",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/20": {
+    "role": "CoverState",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/234": {
+    "role": "native-layout-not-captured",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/C2S/256": {
+    "role": "WorldControl",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/261": {
+    "role": "RespawnFinished",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/265": {
+    "role": "WingUpgrade",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/3": {
+    "role": "MapNavigationSelection",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/328": {
+    "role": "CutsceneCompletion",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/329": {
+    "role": "CinematicCue",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/39": {
+    "role": "SoloRespawn",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/413": {
+    "role": "CharacterState",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/425": {
+    "role": "native-modifier-bits-not-captured",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/C2S/60": {
+    "role": "SkillAimShootable",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/61": {
+    "role": "SkillAimThrowable",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/64": {
+    "role": "SkillNodeFinished",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/67": {
+    "role": "SkillObjectTransform",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/72": {
+    "role": "SkillScriptRun",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/73": {
+    "role": "SkillHeartbeat",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/75": {
+    "role": "SkillLoadout",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/84": {
+    "role": "SkillThrowItem",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/89": {
+    "role": "skill-wait-server",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/C2S/9": {
+    "role": "ClientReady",
+    "basis": "private handler role"
+  },
+  "game_server/C2S/90": {
+    "role": "SkillWaitForSource",
+    "basis": "private handler role"
+  },
+  "game_server/S2C/1": {
+    "role": "resource-receipt-kind9",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/100": {
+    "role": "Dialogue",
+    "basis": "documented role; payload variant may differ",
+    "variant": "mission-dialogue"
+  },
+  "game_server/S2C/103": {
+    "role": "Transform",
+    "basis": "documented role; payload variant may differ",
+    "variant": "actor-transform"
+  },
+  "game_server/S2C/104": {
+    "role": "environment-time",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/105": {
+    "role": "environment-weather",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/106": {
+    "role": "Bullet effects / acknowledgment",
+    "basis": "documented role; payload variant may differ",
+    "variant": "dictionary-shots-and-reload-state"
+  },
+  "game_server/S2C/108": {
+    "role": "Player / party state",
+    "basis": "documented role; payload variant may differ",
+    "variant": "map-navigation-delta"
+  },
+  "game_server/S2C/111": {
+    "role": "actor-request-status",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/112": {
+    "role": "detected-target-empty-suspicion",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/115": {
+    "role": "weak-point-gauges",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/117": {
+    "role": "NPC firing cue",
+    "basis": "documented role; payload variant may differ",
+    "variant": "named-shoot-sequence-or-stop"
+  },
+  "game_server/S2C/118": {
+    "role": "Interaction acknowledgment",
+    "basis": "documented role; payload variant may differ",
+    "variant": "dictionary-interaction"
+  },
+  "game_server/S2C/120": {
+    "role": "Discovery",
+    "basis": "documented role; payload variant may differ",
+    "variant": "prop-discovery-delta"
+  },
+  "game_server/S2C/126": {
+    "role": "solo-destinations",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/134": {
+    "role": "backpack-stash-transfer",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/136": {
+    "role": "kind0-equip-or-unequip",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/137": {
+    "role": "Inventory items",
+    "basis": "documented role; payload variant may differ",
+    "variant": "native-item-grant"
+  },
+  "game_server/S2C/14": {
+    "role": "sequence-reference-bindings",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/148": {
+    "role": "Resource balance",
+    "basis": "documented role; payload variant may differ",
+    "variant": "native-resource-change"
+  },
+  "game_server/S2C/149": {
+    "role": "private-vendor-stock",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/15": {
+    "role": "Actor movement",
+    "basis": "documented role; payload variant may differ"
+  },
+  "game_server/S2C/157": {
+    "role": "private-vendor-buyback",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/159": {
+    "role": "zone-preparation",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/160": {
+    "role": "world-handoff",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/162": {
+    "role": "travel-credential",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/17": {
+    "role": "Entity state",
+    "basis": "documented role; payload variant may differ"
+  },
+  "game_server/S2C/18": {
+    "role": "Collected entity state",
+    "basis": "documented role; payload variant may differ",
+    "variant": "cohort-masks0-2-3"
+  },
+  "game_server/S2C/20": {
+    "role": "dictionary-cover",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/230": {
+    "role": "Mission objective",
+    "basis": "documented role; payload variant may differ",
+    "variant": "private-activity-main-listing-side-objectives"
+  },
+  "game_server/S2C/240": {
+    "role": "native-mission-difficulty",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/251": {
+    "role": "world-bracket-scalar",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/252": {
+    "role": "world-bracket-score-pair",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/260": {
+    "role": "respawn-pose",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/261": {
+    "role": "teleport-finished",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/264": {
+    "role": "wing-unlocked",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/265": {
+    "role": "wing-upgrade-state",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/31": {
+    "role": "NPC path / motion",
+    "basis": "documented role; payload variant may differ",
+    "variant": "ground-path-no-links"
+  },
+  "game_server/S2C/32": {
+    "role": "NPC idle style",
+    "basis": "documented role; payload variant may differ",
+    "variant": "idle-style-u8"
+  },
+  "game_server/S2C/328": {
+    "role": "sequence-phase",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/333": {
+    "role": "Item definition",
+    "basis": "documented role; payload variant may differ"
+  },
+  "game_server/S2C/343": {
+    "role": "Mission reward",
+    "basis": "documented role; payload variant may differ",
+    "variant": "native-reward-summary"
+  },
+  "game_server/S2C/345": {
+    "role": "Script collection / scene",
+    "basis": "documented role; payload variant may differ",
+    "variant": "scene-participant-bind"
+  },
+  "game_server/S2C/346": {
+    "role": "Scene control",
+    "basis": "documented role; payload variant may differ",
+    "variant": "scene-seek-or-stop"
+  },
+  "game_server/S2C/347": {
+    "role": "remove-loot-groups",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/35": {
+    "role": "NPC focus",
+    "basis": "documented role; payload variant may differ",
+    "variant": "entity-focus-or-clear"
+  },
+  "game_server/S2C/359": {
+    "role": "show-lesson",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/36": {
+    "role": "named-ai-animation",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/360": {
+    "role": "Situation report",
+    "basis": "documented role; payload variant may differ"
+  },
+  "game_server/S2C/367": {
+    "role": "lesson-action-performed",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/382": {
+    "role": "collected-intel",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/413": {
+    "role": "flags-actor",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/42": {
+    "role": "Player experience",
+    "basis": "documented role; payload variant may differ"
+  },
+  "game_server/S2C/430": {
+    "role": "empty-completion-update",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/438": {
+    "role": "NPC initialization",
+    "basis": "documented role; payload variant may differ",
+    "variant": "type2-initial1-requested11"
+  },
+  "game_server/S2C/439": {
+    "role": "Player initialization",
+    "basis": "documented role; payload variant may differ"
+  },
+  "game_server/S2C/44": {
+    "role": "Accolades rewarded",
+    "basis": "documented role; payload variant may differ",
+    "variant": "headshot-accolade"
+  },
+  "game_server/S2C/45": {
+    "role": "combat-enter-exit",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/48": {
+    "role": "Combat damage feedback",
+    "basis": "documented role; payload variant may differ",
+    "variant": "committed-bullet-damage"
+  },
+  "game_server/S2C/52": {
+    "role": "wing-talent-grant",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/60": {
+    "role": "skill-aim-shootable",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/61": {
+    "role": "skill-aim-throwable",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/64": {
+    "role": "skill-node-finished",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/65": {
+    "role": "spawn-npc-result",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/68": {
+    "role": "skill-child-run",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/69": {
+    "role": "Skill grants",
+    "basis": "documented role; payload variant may differ",
+    "variant": "skill-availability"
+  },
+  "game_server/S2C/7": {
+    "role": "Player initialization",
+    "basis": "documented role; payload variant may differ"
+  },
+  "game_server/S2C/70": {
+    "role": "wing-skill-modification-grant",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/72": {
+    "role": "skill-script-run",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/74": {
+    "role": "skill-finish-observed",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/75": {
+    "role": "Skill assignment",
+    "basis": "documented role; payload variant may differ",
+    "variant": "skill-loadout"
+  },
+  "game_server/S2C/83": {
+    "role": "npc-skill-position",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/84": {
+    "role": "skill-throw-item",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/89": {
+    "role": "skill-wait-server",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/90": {
+    "role": "skill-wait-source",
+    "basis": "documented packet contract variant"
+  },
+  "game_server/S2C/91": {
+    "role": "npc-skill-animation",
+    "basis": "documented packet contract variant"
+  },
+  "profile_client/C2S/0": {
+    "role": "Login ticket",
+    "basis": "observed profile service role"
+  },
+  "profile_client/C2S/1": {
+    "role": "Character list request",
+    "basis": "observed profile service role"
+  },
+  "profile_client/S2C/2": {
+    "role": "Character profile",
+    "basis": "observed profile service role"
+  }
+}

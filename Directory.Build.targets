@@ -1,0 +1,8 @@
+<Project>
+  <!-- Web SDK includes arbitrary JSON as content. Restore locks are build inputs,
+       and publishing referenced hosts must not merge their identically named locks. -->
+  <ItemGroup>
+    <Content Remove="packages.*.lock.json" />
+    <None Update="packages.*.lock.json" CopyToOutputDirectory="Never" CopyToPublishDirectory="Never" />
+  </ItemGroup>
+</Project>

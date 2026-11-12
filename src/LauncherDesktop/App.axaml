@@ -1,0 +1,12 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Division.Launcher.Desktop.App" RequestedThemeVariant="Dark">
+  <Application.Styles>
+    <FluentTheme />
+    <Style Selector="TextBlock.Title"><Setter Property="FontSize" Value="28"/><Setter Property="FontWeight" Value="SemiBold"/></Style>
+    <Style Selector="TextBlock.Muted"><Setter Property="Foreground" Value="#AEBBC9"/><Setter Property="TextWrapping" Value="Wrap"/></Style>
+    <Style Selector="Button"><Setter Property="Padding" Value="16,10"/><Setter Property="CornerRadius" Value="6"/></Style>
+    <Style Selector="Button.Primary"><Setter Property="Background" Value="#F28B30"/><Setter Property="Foreground" Value="#171C22"/><Setter Property="FontWeight" Value="SemiBold"/></Style>
+    <Style Selector="TextBox"><Setter Property="MinHeight" Value="40"/><Setter Property="CornerRadius" Value="5"/></Style>
+  </Application.Styles>
+</Application>

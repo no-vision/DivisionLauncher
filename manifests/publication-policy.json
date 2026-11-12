@@ -1,0 +1,30 @@
+{
+  "emptyGameTables": [],
+  "reviewedHistoryCommits": [],
+  "forbiddenPaths": [
+    "content/",
+    "content-packs/",
+    "Research/",
+    "Resources/",
+    "src/Persistence/",
+    "src/AuthHost/",
+    "src/LobbyHost/",
+    "src/WorldHost/",
+    "src/ServerAdmin/",
+    "src/Retail/",
+    "src/Content/",
+    "Production/"
+  ],
+  "allowedClientCoreFiles": [
+    "AccountIdentity.cs",
+    "Core.csproj",
+    "LauncherCompatibility.cs",
+    "LauncherContracts.cs",
+    "ObservationContracts.cs",
+    "PrivateFriends.cs",
+    "packages.linux-x64.lock.json",
+    "packages.lock.json",
+    "packages.win-x64.lock.json"
+  ],
+  "clientCorePath": "src/Core/"
+}

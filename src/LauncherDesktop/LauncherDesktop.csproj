@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <Version>0.4.16</Version>
+    <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
+    <AvaloniaUseTelemetry>false</AvaloniaUseTelemetry>
+    <!-- XAML rewriting reintroduces an absolute PDB path after compiler PathMap.
+         Distributed GUI releases omit symbols; Debug builds retain diagnostics. -->
+    <DebugType Condition="'$(Configuration)' == 'Release'">none</DebugType>
+    <DebugSymbols Condition="'$(Configuration)' == 'Release'">false</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Launcher/Launcher.csproj" />
+    <PackageReference Include="Avalonia.Desktop" Version="12.1.4" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="../../adapters/proton_client.py;../../adapters/windows_client.py;../../adapters/windows_environment_agent.js;../../adapters/tutorial_history.py;../../adapters/display_settings.py;../../adapters/overlay_frame.py;../../adapters/overlay_ui.py;../../adapters/startup_agent.js;../../adapters/private_friends_agent.js;../../adapters/private_friends_feed.py;../../adapters/aim_diagnostic.js;../../adapters/overlay/agent.js;../../adapters/overlay/bridge.c;../../adapters/overlay/packet_roles.json">
+      <Link>client/%(Filename)%(Extension)</Link>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="../../adapters/overlay/agent.js;../../adapters/overlay/bridge.c;../../adapters/overlay/packet_roles.json"><Link>client/overlay/%(Filename)%(Extension)</Link></Content>
+  </ItemGroup>
+  <ItemGroup Condition="'$(RuntimeIdentifier)' == 'win-x64'">
+    <Content Include="../../.cache/adapters/windows/python/**/*">
+      <Link>python/%(RecursiveDir)%(Filename)%(Extension)</Link>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="../../.cache/adapters/windows/sources.json">
+      <Link>ThirdPartyNotices/WindowsAdapterSources.json</Link>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

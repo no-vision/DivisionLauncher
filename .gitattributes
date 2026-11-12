@@ -1,0 +1,13 @@
+* text=auto
+*.sh text eol=lf
+*.py text eol=lf
+*.cs text eol=lf
+*.sql text eol=lf
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.sqlite3 binary
+*.gz binary
+*.bin binary
+
+# Preserve Lua source hashes and behavior across platform checkouts.
+*.lua text eol=lf

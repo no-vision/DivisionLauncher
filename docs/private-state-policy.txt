@@ -1,0 +1,7 @@
+PRIVATE STATE TAKES PRECEDENCE
+
+Accounts, appearance, inventory, skills and progress belong to the selected private
+server. The launcher authenticates to that server and uses its current handoff.
+Captured official state must never become account state or a runtime credential.
+Keep credentials, certificates, launcher profiles, observations and game files out
+of source control. Preserve user stores and installation files during updates.
